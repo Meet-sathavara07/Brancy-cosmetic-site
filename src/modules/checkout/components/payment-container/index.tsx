@@ -198,7 +198,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
             <div>
               <label className="block mb-2" htmlFor="cardName">
                 {" "}
-                Card Holder's Name:
+                Card Holder Name:
               </label>
               <input
                 id="cardName"

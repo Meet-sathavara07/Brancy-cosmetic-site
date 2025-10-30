@@ -43,6 +43,8 @@ module.exports = withStoreConfig({
       "@medusajs/modules-sdk",
     ],
   },
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
   features: {},
   reactStrictMode: true,
   images: {

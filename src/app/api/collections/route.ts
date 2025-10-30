@@ -8,6 +8,11 @@ import { notFound } from "next/navigation"
  * Read more about the Product Module here: https://docs.medusajs.com/modules/products/serverless-module
  */
 export async function GET(request: NextRequest) {
+  // Skip database operations during build
+  if (process.env.NODE_ENV === "production" && !process.env.POSTGRES_URL) {
+    return Response.json({ error: "Database not configured" }, { status: 503 })
+  }
+
   const productService = await initializeProductModule()
 
   const { offset, limit } = Object.fromEntries(request.nextUrl.searchParams)
@@ -29,3 +34,4 @@ export async function GET(request: NextRequest) {
     count,
   })
 }
+export const dynamic = "force-dynamic"
