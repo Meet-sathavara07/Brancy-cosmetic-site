@@ -1,5 +1,7 @@
 import Providers from "@/modules/providers"
 import { Inter } from "next/font/google"
+// Import global styles (TypeScript can't type-check CSS imports)
+// @ts-ignore: allow side-effect CSS import
 import "./globals.css"
 import Header from "@/components/common/Header"
 import Footer from "@/components/common/Footer"
